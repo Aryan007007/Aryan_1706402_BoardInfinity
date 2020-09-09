@@ -13,6 +13,7 @@ import '../style.css';
 const TextInput = ({addMessage}) => {
   const [form] = Form.useForm();
   const [requiredMark]= useState('optional');
+  const [title, setTitle] = useState('');
 
   const handleSubmit = e => {
 
@@ -44,7 +45,7 @@ const TextInput = ({addMessage}) => {
       <Form.Item label="Your Tweet" required>
         <Input placeholder="Your Twitter Message Goes Here ....." 
         value={title}
-        onChange={(e) => (e.target.value)}
+        onChange={(e) => setTitle(e.target.value)}
         />
       </Form.Item>
       <Form.Item label="Auto Delete Date and Time" required>
